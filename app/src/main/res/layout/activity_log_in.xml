@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#978585"
     android:gravity="center"
     android:layout_height="match_parent"
     tools:context=".LogInActivity">
@@ -20,6 +20,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:gravity="center"
+            android:textColor="@color/black"
             android:layout_height="match_parent"
             android:hint="Email"
             android:inputType="textEmailAddress"
@@ -30,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        app:errorTextColor="@color/black"
         app:boxBackgroundMode="outline"
         app:boxBackgroundColor="#41ECECEC"
         android:background="@drawable/button_backgroun_radius"

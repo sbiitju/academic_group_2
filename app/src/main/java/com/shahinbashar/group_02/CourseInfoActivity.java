@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.shahinbashar.group_02.model.Course;
 import com.shahinbashar.group_02.recycler_view.MyAdapter;
 
@@ -33,5 +36,11 @@ List<Course> courseList;
         MyAdapter myAdapter=new MyAdapter(courseList,pic,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(myAdapter);
+    }
+
+    public void LogOut(View view) {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(this,LogInActivity.class));
+        finish();
     }
 }

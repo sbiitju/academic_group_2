@@ -31,7 +31,8 @@ public class LogInActivity extends AppCompatActivity {
     public void SignIn(View view) {
         e=email.getText().toString();
         p=password.getText().toString();
-       firebaseAuth.signInWithEmailAndPassword(e,p).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        if(e.isEmpty()||p.isEmpty()) return;
+        firebaseAuth.signInWithEmailAndPassword(e,p).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
            @Override
            public void onComplete(@NonNull Task<AuthResult> task) {
           if(task.isSuccessful()){
@@ -49,6 +50,7 @@ public class LogInActivity extends AppCompatActivity {
     public void Registration(View view) {
         e=email.getText().toString();
         p=password.getText().toString();
+        if(e.isEmpty()||p.isEmpty()) return;
         firebaseAuth.createUserWithEmailAndPassword(e,p).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
